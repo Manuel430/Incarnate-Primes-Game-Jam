@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Incarnate Primes
   productName: World of Squares
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -905,7 +905,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 3513c790-c026-45b2-8b6e-917783aa7089
   framebufferDepthMemorylessMode: 0
