@@ -59,8 +59,8 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""06beb180-1b2c-4a26-93b4-0191f9af8394"",
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""af02706a-d237-402f-81ac-138a226b81c5"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -70,9 +70,9 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""90b605b8-5879-4923-8d82-05c3ab911c66"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""up"",
+                    ""id"": ""5582d6b0-d8f5-4292-9487-3760fb2d82f5"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -81,9 +81,9 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""7d291108-e386-4b52-bdb4-94cb466e2edb"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""down"",
+                    ""id"": ""75f74256-e86f-4ae5-9c43-46a3faa985ba"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -92,19 +92,8 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Arrows"",
-                    ""id"": ""ac03007a-1064-4196-b8e6-838d50fa9fd3"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""left"",
-                    ""id"": ""ad41e42b-37a5-469f-bc10-0ed5877e422c"",
+                    ""id"": ""52a2340e-061d-4846-9f44-6be22a89f520"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -115,8 +104,63 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""175c6668-4fd5-429d-bb45-1834e267c9bf"",
+                    ""id"": ""7b002b63-dce9-462c-8e23-ab506b35de43"",
                     ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""a71e1039-e85d-4201-8be2-925b0d316a33"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3a63c64f-5e6c-43d4-870d-dcd65656c94d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5f674d09-6772-4d8e-ab54-329d8284f1e4"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b498f097-9255-4b5f-99ed-68a4c48e3ebe"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""22287b1e-dc92-4c0a-8755-7dc2a3be1668"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

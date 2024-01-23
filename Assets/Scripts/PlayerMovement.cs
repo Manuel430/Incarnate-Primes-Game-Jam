@@ -23,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetCutscene(bool cutscene)
     {
         inCutscene = cutscene;
+
+        if(inCutscene)
+        {
+            OnDisable();
+        }
     }
     public bool GetCutscene()
     {
@@ -38,6 +43,20 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Player.Jump.performed += Jump;
     }
 
+    #region On Enable/Disable
+    private void OnEnable()
+    {
+        playerControls.Player.Enable();
+        playerControls.Player.Jump.performed += Jump;
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Player.Disable();
+        playerControls.Player.Jump.performed -= Jump;
+    }
+    #endregion
+
     private void Update()
     {
         ProcessMovement();
@@ -46,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     private void ProcessMovement()
     {
         Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
-        Vector3 movementDir = new Vector3(inputVector.x, 0, 0);
+        Vector3 movementDir = new Vector3(inputVector.x, 0, inputVector.y);
 
         playerVelocity.y += gravity * Time.deltaTime;
 
@@ -57,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveInputVal = transform.TransformDirection(movementDir) * speed;
         playerVelocity.x = moveInputVal.x;
+        playerVelocity.z = moveInputVal.z;
 
         characterController.Move(playerVelocity * Time.deltaTime);
 
