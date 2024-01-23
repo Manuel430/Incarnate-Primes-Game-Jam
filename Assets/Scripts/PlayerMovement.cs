@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    /*
-     PlayerInputScript;
-    CharacterController characterController;
+    PlayerControlsScript playerControls;
+    [SerializeField] CharacterController characterController;
 
     [Header("Cutscene")]
     [SerializeField] bool inCutscene;
@@ -26,24 +23,17 @@ public class PlayerMovement : MonoBehaviour
     public void SetCutscene(bool cutscene)
     {
         inCutscene = cutscene;
-
-        if (inCutscene)
-        {
-            playerControls.Player.Disable();
-        }
     }
     public bool GetCutscene()
     {
         return inCutscene;
     }
-
     #endregion
+
     private void Awake()
     {
         playerControls = new PlayerControlsScript();
         playerControls.Player.Enable();
-
-        characterController = GetComponent<CharacterController>();
 
         playerControls.Player.Jump.performed += Jump;
     }
@@ -52,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ProcessMovement();
     }
+    
     private void ProcessMovement()
     {
         Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
@@ -67,14 +58,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveInputVal = transform.TransformDirection(movementDir) * speed;
         playerVelocity.x = moveInputVal.x;
 
+        characterController.Move(playerVelocity * Time.deltaTime);
+
     }
 
-    private void Jump(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context)
     {
         if (characterController.isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
-    */
 }
