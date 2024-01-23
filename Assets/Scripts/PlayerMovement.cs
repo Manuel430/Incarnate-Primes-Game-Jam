@@ -44,13 +44,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region On Enable/Disable
-    private void OnEnable()
+    public void OnEnable()
     {
         playerControls.Player.Enable();
         playerControls.Player.Jump.performed += Jump;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         playerControls.Player.Disable();
         playerControls.Player.Jump.performed -= Jump;
