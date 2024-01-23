@@ -4,24 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class NPCInteract : MonoBehaviour
 {
     bool inCutscene;
     bool finalActive;
     [SerializeField] GameObject interactionUI;
+    [SerializeField] GameObject DialoguePanel;
 
     [Header("OutsideScripts")]
     PlayerControlsScript playerControls;
     [SerializeField] PauseUI pause;
     [SerializeField] PlayerMovement player;
 
+    [Header("Dialogue Text")]
+    [SerializeField] TMP_Text dialogueTemplate;
+    [SerializeField] string customDialogue;
+
     private void Awake()
     {
         interactionUI.SetActive(false);
+        DialoguePanel.SetActive(false);
 
         playerControls = new PlayerControlsScript();
         playerControls.Player.Enable();
+
+        dialogueTemplate.text = customDialogue;
     }
 
     #region Get/Set Cutscene
@@ -31,10 +40,10 @@ public class NPCInteract : MonoBehaviour
 
     public bool SetCutsceneAndInteraction(bool setActive)
     {
-        player.SetCutscene(!setActive);
         SetCutscene(!setActive);
 
-        interactionUI.SetActive(setActive);
+        interactionUI.SetActive(!setActive);
+        DialoguePanel.SetActive(setActive);
 
         finalActive = setActive;
         return finalActive;
@@ -54,6 +63,13 @@ public class NPCInteract : MonoBehaviour
 
         interactionUI.SetActive(false);
         playerControls.Player.Interact.performed -= Interact;
+
+        SetCutsceneAndInteraction(true);
+
+        if(DialoguePanel == true)
+        {
+            DialoguePanel.SetActive(false);
+        }
     }
 
     private void Interact(InputAction.CallbackContext context)
@@ -61,6 +77,13 @@ public class NPCInteract : MonoBehaviour
         if (pause.GetPaused())
         {
             return;
+        }
+
+        if (interactionUI.gameObject == true && inCutscene == false)
+        {
+            inCutscene = true;
+            interactionUI.SetActive(false);
+            DialoguePanel.SetActive(true);
         }
     }
 }

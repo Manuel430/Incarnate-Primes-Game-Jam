@@ -10,6 +10,7 @@ public class NPCMovement : MonoBehaviour
     Vector3 rayPoint;
 
     [SerializeField] Transform centerPoint;
+    [SerializeField] NPCInteract inCutscene;
 
     private void Awake()
     {
@@ -32,6 +33,16 @@ public class NPCMovement : MonoBehaviour
 
     private void Update()
     {
+        if (inCutscene.GetCutscene())
+        {
+            npcAgent.isStopped = true;
+            return;
+        }
+        else
+        {
+            npcAgent.isStopped = false;
+        }
+
         range = Random.Range(1, 10);
         if(npcAgent.remainingDistance <= npcAgent.stoppingDistance)
         {
