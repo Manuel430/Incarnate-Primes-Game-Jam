@@ -5251,6 +5251,11 @@ PrefabInstance:
       objectReference: {fileID: 1985995349}
     - target: {fileID: 5422768132722653685, guid: 525f0fc4bc3efa14bbc9cdfdcb8bdbbf,
         type: 3}
+      propertyPath: maxTime
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422768132722653685, guid: 525f0fc4bc3efa14bbc9cdfdcb8bdbbf,
+        type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1866797037}
