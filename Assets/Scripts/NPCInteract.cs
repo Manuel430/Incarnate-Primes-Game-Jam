@@ -22,6 +22,13 @@ public class NPCInteract : MonoBehaviour
     [SerializeField] TMP_Text dialogueTemplate;
     [SerializeField] string customDialogue;
 
+    [Header("Animations")]
+    [SerializeField] Animation npcAnimation;
+    [SerializeField] AnimationClip npcIdle;
+    [SerializeField] AnimationClip npcLaugh;
+    [SerializeField] AnimationClip npcHappyIdle;
+    [SerializeField] bool isHappy;
+
     private void Awake()
     {
         interactionUI.SetActive(false);
@@ -31,6 +38,8 @@ public class NPCInteract : MonoBehaviour
         playerControls.Player.Enable();
 
         dialogueTemplate.text = customDialogue;
+
+        npcAnimation.clip = npcIdle;
     }
 
     #region Get/Set Cutscene
@@ -69,6 +78,11 @@ public class NPCInteract : MonoBehaviour
         if(DialoguePanel == true)
         {
             DialoguePanel.SetActive(false);
+        }
+
+        if(isHappy)
+        {
+            npcAnimation.clip = npcHappyIdle;
         }
     }
 
