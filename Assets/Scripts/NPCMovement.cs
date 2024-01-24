@@ -12,6 +12,8 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] Transform centerPoint;
     [SerializeField] NPCInteract inCutscene;
 
+
+
     private void Awake()
     {
         npcAgent = GetComponent<NavMeshAgent>();
@@ -67,4 +69,5 @@ public class NPCMovement : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
+
 }
