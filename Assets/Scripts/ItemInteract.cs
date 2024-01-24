@@ -9,7 +9,7 @@ public class ItemInteract : MonoBehaviour
     PlayerControlsScript playerControl;
     [SerializeField] GameObject interactionUI;
     [SerializeField] GameObject parentObject;
-
+    [SerializeField] int itemID;
     private void Awake()
     {
         interactionUI.SetActive(false);

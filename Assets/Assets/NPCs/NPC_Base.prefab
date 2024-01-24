@@ -132,10 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 9125093510758618572}
   inCutscene: {fileID: 6087932580250367791}
-  npcAnimation: {fileID: 0}
-  npcIdle: {fileID: 0}
-  npcLaugh: {fileID: 0}
-  npcHappyIdle: {fileID: 0}
 --- !u!1 &5426727387729481501
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,11 +306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionUI: {fileID: 0}
-  DialoguePanel: {fileID: 8599496757008941303}
+  DialoguePanel: {fileID: 0}
   pause: {fileID: 0}
   player: {fileID: 0}
+  timer: {fileID: 0}
   dialogueTemplate: {fileID: 0}
   customDialogue: 
+  wrongItemDialogue: 
+  rightItemDialogue: 
+  wrongItem: 0
+  rightItem: 0
+  timeLoss: 0
+  npcAnimation: {fileID: 0}
+  isHappy: 0
 --- !u!1 &8599496757008941303
 GameObject:
   m_ObjectHideFlags: 0

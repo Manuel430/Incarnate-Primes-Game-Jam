@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9aeb4d3af0a3b045a58432ace3972dd
+guid: b47184f8b3e1a4149bc997fff7c070c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -34,10 +34,10 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Laugh
-      takeName: Take 001
-      internalID: 1827226128182048838
+      takeName: Dapper_Man_Laugh3
+      internalID: -8809145613995190224
       firstFrame: 1
-      lastFrame: 70
+      lastFrame: 62
       wrapMode: 1
       orientationOffsetY: 0
       level: 0

@@ -17,10 +17,19 @@ public class NPCInteract : MonoBehaviour
     PlayerControlsScript playerControls;
     [SerializeField] PauseUI pause;
     [SerializeField] PlayerMovement player;
+    [SerializeField] GameTimer timer;
+    [SerializeField] PlayerWin pointOff;
 
     [Header("Dialogue Text")]
     [SerializeField] TMP_Text dialogueTemplate;
     [SerializeField] string customDialogue;
+    [SerializeField] string wrongItemDialogue;
+    [SerializeField] string rightItemDialogue;
+
+    [Header("Item Checks")]
+    [SerializeField] bool wrongItem;
+    [SerializeField] bool rightItem;
+    [SerializeField] int timeLoss;
 
     [Header("Animations")]
     [SerializeField] Animation npcAnimation;
@@ -34,8 +43,6 @@ public class NPCInteract : MonoBehaviour
         playerControls = new PlayerControlsScript();
         playerControls.Player.Enable();
 
-        dialogueTemplate.text = customDialogue;
-
         npcAnimation.Play("Idle");
 
     }
@@ -45,6 +52,15 @@ public class NPCInteract : MonoBehaviour
     public bool SetCutscene(bool setActive) {  return inCutscene = setActive; }
     #endregion
 
+    public bool SetWrongItem(bool checker)
+    {
+        return wrongItem = checker;
+    }
+
+    public bool SetRightItem(bool checker)
+    {
+        return wrongItem = checker;
+    }
     public bool SetCutsceneAndInteraction(bool setActive)
     {
         SetCutscene(!setActive);
@@ -95,6 +111,30 @@ public class NPCInteract : MonoBehaviour
         {
             inCutscene = true;
             interactionUI.SetActive(false);
+
+            if(wrongItem == true)
+            {
+                dialogueTemplate.text = wrongItemDialogue;
+
+                timer.LossOfTime(timeLoss);
+            }
+            else if (rightItem == true)
+            {
+                dialogueTemplate.text = rightItemDialogue;
+
+                if (isHappy == false)
+                {
+                    npcAnimation.Play("Laugh");
+                    npcAnimation.PlayQueued("Idle_Happy");
+                    isHappy = true;
+                    pointOff.SubtractAmount(1);
+                }
+            }
+            else
+            {
+                dialogueTemplate.text = customDialogue;
+            }
+
             DialoguePanel.SetActive(true);
         }
     }

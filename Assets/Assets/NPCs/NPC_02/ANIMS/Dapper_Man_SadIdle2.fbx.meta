@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9aeb4d3af0a3b045a58432ace3972dd
+guid: 973a8cf60ebd9444f97815fc8503cd83
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,12 +33,12 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Laugh
-      takeName: Take 001
-      internalID: 1827226128182048838
+      name: Idle
+      takeName: Dapper_Man_SadIdle2
+      internalID: -4712649871798441454
       firstFrame: 1
-      lastFrame: 70
-      wrapMode: 1
+      lastFrame: 90
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

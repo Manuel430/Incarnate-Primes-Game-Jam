@@ -41,7 +41,7 @@ public class GameTimer : MonoBehaviour
             else if (remainingTime < 1)
             {
                 remainingTime = 0;
-                player.OnDisable();
+                player.SetCutscene(true);
                 //Play death animation before stopping the whole game
                 gameOverUI.SetActive(true);
             }
@@ -51,5 +51,10 @@ public class GameTimer : MonoBehaviour
     public bool SetCountDown(bool setActive)
     {
         return countDown = setActive;
+    }
+
+    public void LossOfTime(int timeLoss)
+    {
+        remainingTime -= timeLoss;
     }
 }

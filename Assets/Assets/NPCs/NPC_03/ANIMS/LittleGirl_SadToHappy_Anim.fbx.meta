@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9aeb4d3af0a3b045a58432ace3972dd
+guid: 4d1eeddb07931b445b17f2fdf8101854
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -34,15 +34,15 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Laugh
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: 1
-      lastFrame: 70
+      takeName: LittleGirl_SadToHappy_Anim
+      internalID: -5325106899964450379
+      firstFrame: 0
+      lastFrame: 38.000004
       wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
-      loop: 0
+      loop: 1
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
