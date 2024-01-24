@@ -9,7 +9,10 @@ public class ItemInteract : MonoBehaviour
     PlayerControlsScript playerControl;
     [SerializeField] GameObject interactionUI;
     [SerializeField] GameObject parentObject;
-    [SerializeField] int itemID;
+
+    [SerializeField] InventoryItem pickedItem;
+    [SerializeField] InventorySystem inventorySystem;
+
     private void Awake()
     {
         interactionUI.SetActive(false);
@@ -36,6 +39,7 @@ public class ItemInteract : MonoBehaviour
     private void CollectItem(InputAction.CallbackContext context)
     {
         interactionUI.SetActive(false);
+        inventorySystem.Add(pickedItem);
         Destroy(parentObject);
     }
 }
