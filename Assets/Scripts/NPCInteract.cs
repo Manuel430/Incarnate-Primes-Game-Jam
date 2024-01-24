@@ -24,9 +24,6 @@ public class NPCInteract : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] Animation npcAnimation;
-    [SerializeField] AnimationClip npcIdle;
-    [SerializeField] AnimationClip npcLaugh;
-    [SerializeField] AnimationClip npcHappyIdle;
     [SerializeField] bool isHappy;
 
     private void Awake()
@@ -39,7 +36,8 @@ public class NPCInteract : MonoBehaviour
 
         dialogueTemplate.text = customDialogue;
 
-        npcAnimation.clip = npcIdle;
+        npcAnimation.Play("Idle");
+
     }
 
     #region Get/Set Cutscene
@@ -82,7 +80,7 @@ public class NPCInteract : MonoBehaviour
 
         if(isHappy)
         {
-            npcAnimation.clip = npcHappyIdle;
+            npcAnimation.Play("Idle_Happy");
         }
     }
 
