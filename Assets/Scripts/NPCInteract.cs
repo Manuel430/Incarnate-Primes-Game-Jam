@@ -59,7 +59,7 @@ public class NPCInteract : MonoBehaviour
 
     public bool SetRightItem(bool checker)
     {
-        return wrongItem = checker;
+        return rightItem = checker;
     }
     public bool SetCutsceneAndInteraction(bool setActive)
     {
