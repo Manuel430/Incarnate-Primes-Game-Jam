@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerControlsScript playerControls;
     [SerializeField] CharacterController characterController;
+    [SerializeField] GameObject playerBody;
+    [SerializeField] Animation playerANIM;
 
     [Header("Cutscene")]
     [SerializeField] bool inCutscene;
@@ -18,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float gravity = -9.8f;
+    [SerializeField] float rotationSpeed = 5f;
+
+    [SerializeField] bool isJumping;
+    [SerializeField] bool startJump;
 
     #region Cutscene Get/Set
     public void SetCutscene(bool cutscene)
@@ -60,19 +66,67 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ProcessMovement();
+
+        if(characterController.isGrounded)
+        {
+            isJumping = false;
+            startJump = true;
+        }
     }
     
     private void ProcessMovement()
     {
-        Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
-        Vector3 movementDir = new Vector3(inputVector.x, 0, inputVector.y);
-
-        playerVelocity.y += gravity * Time.deltaTime;
-
         if (characterController.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = -2;
         }
+
+        Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
+        Vector3 movementDir = (new Vector3(inputVector.x, 0, inputVector.y)).normalized;
+        if (inputVector.magnitude != 0)
+        {
+            if (isJumping)
+            {
+                if (startJump)
+                {
+                    playerANIM.Play("Jump");
+                    startJump = false;
+                }
+                playerANIM.PlayQueued("Jump_Fall");
+            }
+            else
+            {
+                playerANIM.Play("Run");
+            }
+            Debug.Log(movementDir);
+
+            float angle = Vector3.SignedAngle(playerBody.transform.forward, movementDir, Vector3.up);
+
+            Quaternion rot = Quaternion.AngleAxis(angle, Vector3.up);
+
+            playerBody.transform.rotation = Quaternion.Lerp(playerBody.transform.rotation, playerBody.transform.rotation * rot, Time.deltaTime * rotationSpeed);
+        }
+        else
+        {
+            if (characterController.isGrounded)
+            {
+                playerANIM.Play("Idle");
+            }
+            else
+            {
+                if (isJumping)
+                {
+                    if (startJump)
+                    {
+                        playerANIM.Play("Jump");
+                        startJump = false;
+                    }
+                }
+            }
+        }
+
+
+        playerVelocity.y += gravity * Time.deltaTime;
 
         Vector3 moveInputVal = transform.TransformDirection(movementDir) * speed;
         playerVelocity.x = moveInputVal.x;
@@ -86,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
+            isJumping = true;
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
