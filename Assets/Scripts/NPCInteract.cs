@@ -12,6 +12,7 @@ public class NPCInteract : MonoBehaviour
     bool finalActive;
     [SerializeField] GameObject interactionUI;
     [SerializeField] GameObject DialoguePanel;
+    [SerializeField] GameObject theirItem;
 
     [Header("OutsideScripts")]
     PlayerControlsScript playerControls;
@@ -19,6 +20,7 @@ public class NPCInteract : MonoBehaviour
     [SerializeField] PlayerMovement player;
     [SerializeField] GameTimer timer;
     [SerializeField] PlayerWin pointOff;
+    [SerializeField] NPCItemSelect decision; 
 
     [Header("Dialogue Text")]
     [SerializeField] TMP_Text dialogueTemplate;
@@ -107,10 +109,17 @@ public class NPCInteract : MonoBehaviour
             return;
         }
 
+
+
         if (interactionUI.gameObject == true && inCutscene == false)
         {
             inCutscene = true;
             interactionUI.SetActive(false);
+
+            if (!isHappy)
+            {
+                decision.ItemDecider();
+            }
 
             if(wrongItem == true)
             {

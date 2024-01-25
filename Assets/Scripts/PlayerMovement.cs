@@ -21,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float gravity = -9.8f;
     [SerializeField] float rotationSpeed = 5f;
-
     [SerializeField] bool isJumping;
     [SerializeField] bool startJump;
+
+    [Header("Grab")]
+    [SerializeField] bool canGrab;
 
     #region Cutscene Get/Set
     public void SetCutscene(bool cutscene)
@@ -74,6 +76,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    public bool CanGrab(bool setActive)
+    {
+        return canGrab = setActive;
+    }
+
     private void ProcessMovement()
     {
         if (characterController.isGrounded && playerVelocity.y < 0)
@@ -98,7 +105,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerANIM.Play("Run");
             }
-            Debug.Log(movementDir);
 
             float angle = Vector3.SignedAngle(playerBody.transform.forward, movementDir, Vector3.up);
 
@@ -108,7 +114,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (characterController.isGrounded)
+            if (canGrab)
+            {
+                playerANIM.Play("Grab");
+                canGrab = false;
+                return;
+            }
+            else if (characterController.isGrounded)
             {
                 playerANIM.Play("Idle");
             }

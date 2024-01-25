@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SadNPC
+  - ItemSlot
   layers:
   - Default
   - TransparentFX
