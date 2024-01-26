@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen/TitleScreen_01.unity
     guid: a2cae8a1b49b96d43b8bc9a13d693c41
   - enabled: 1
-    path: Assets/Scenes/Main Game/Whitebox_03.unity
-    guid: eb010beab1350024f828ad40575207fd
+    path: Assets/Scenes/Main Game/FullGame.unity
+    guid: a5183485114e50d4cbbb907d6a7f9048
   m_configObjects: {}

@@ -13,6 +13,7 @@ public class PlayerWin : MonoBehaviour
     [SerializeField] GameObject CanWinUI;
     [SerializeField] GameObject collectionUI;
     [SerializeField] GameObject frogMayor;
+    [SerializeField] AudioSource GameWin;
 
     private void Awake()
     {
@@ -49,6 +50,9 @@ public class PlayerWin : MonoBehaviour
             winUI.SetActive(true);
             CanWinUI.SetActive(false);
             gameTimer.gameObject.SetActive(false);
+            GameWin.Play();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             //player.GameWin();
         }
     }

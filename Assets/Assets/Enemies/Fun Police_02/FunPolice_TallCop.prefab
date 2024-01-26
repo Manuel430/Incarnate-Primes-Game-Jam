@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 2451559063235452841, guid: e34911a5ec26a5b4c8c0e764a9fff5b8,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2895669600301736710, guid: e34911a5ec26a5b4c8c0e764a9fff5b8,
         type: 3}
@@ -178,6 +178,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2125545378042197180}
+    - targetCorrespondingSourceObject: {fileID: 4625997692047586312, guid: e34911a5ec26a5b4c8c0e764a9fff5b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2823415310109368620}
   m_SourcePrefab: {fileID: 100100000, guid: e34911a5ec26a5b4c8c0e764a9fff5b8, type: 3}
 --- !u!1 &791047673746214148 stripped
 GameObject:
@@ -198,6 +202,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   policeRange: {fileID: 8207961877508776396}
+--- !u!114 &2823415310109368620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791047673746214148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab954fb2e3702fe42abe32d09e89f6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
 --- !u!4 &1432676482422833173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6424778925931608345, guid: e34911a5ec26a5b4c8c0e764a9fff5b8,
@@ -307,3 +324,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   policeRadius: {fileID: 8207961877508776396}
+  policeANIM: {fileID: 0}

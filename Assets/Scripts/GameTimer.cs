@@ -49,6 +49,9 @@ public class GameTimer : MonoBehaviour
                 player.SetCutscene(true);
                 player.GameOver();
                 gameOverUI.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
