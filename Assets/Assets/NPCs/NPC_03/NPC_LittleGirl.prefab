@@ -188,6 +188,41 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8220056040701434688, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: -7577276453220655599, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: -6920288108331210197, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: -5817766840002335644, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: -5047897409815766786, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: -1880035327734464626, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: 426805719595964161, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
     - target: {fileID: 919132149155446097, guid: fa38f00c23836de4ea31edb8af528146,
         type: 3}
       propertyPath: m_Name
@@ -222,6 +257,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1130611932343302, guid: 60c0a9601b7c48e448fff89d14ff2bb9,
         type: 3}
+    - target: {fileID: 2803284543586148716, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
+    - target: {fileID: 8529677013977315813, guid: fa38f00c23836de4ea31edb8af528146,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8248ff21802f11045b703bc8208e1ca0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

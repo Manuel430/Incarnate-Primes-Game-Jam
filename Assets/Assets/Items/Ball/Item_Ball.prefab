@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002880657376244666}
-  - component: {fileID: 9195230874221253696}
   m_Layer: 0
   m_Name: Item_Ball
   m_TagString: Untagged
@@ -34,20 +33,6 @@ Transform:
   - {fileID: 7251231445815184255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9195230874221253696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192588871158251829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bcc4ffadff718049ac36abfaf4defe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: 1
-  itemIcon: {fileID: 21300000, guid: b75810aae9e3b394fae62347ed3faf78, type: 3}
 --- !u!1 &8017890277489143928
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionUI: {fileID: 0}
   parentObject: {fileID: 1192588871158251829}
+  itemIcon: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &908079655130932652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,6 +111,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1002880657376244666}
     m_Modifications:
+    - target: {fileID: 1410322726487483893, guid: 165902754fdda5d458e858c0fe885929,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f1fca8f1ec4db34e8fa0f7cb1159726, type: 2}
     - target: {fileID: 7165360712742745193, guid: 165902754fdda5d458e858c0fe885929,
         type: 3}
       propertyPath: m_Name
