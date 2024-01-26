@@ -13,6 +13,7 @@ public class PauseUI : MonoBehaviour
 
     [SerializeField] PlayerControlsScript playerControls;
     [SerializeField] PlayerMovement player;
+    [SerializeField] WordOfTheDay word;
 
     public void Awake()
     {
@@ -40,6 +41,7 @@ public class PauseUI : MonoBehaviour
 
             isPaused = true;
             Time.timeScale = 0;
+            word.SummonWord();
             pauseUI.SetActive(true);
         }
         else

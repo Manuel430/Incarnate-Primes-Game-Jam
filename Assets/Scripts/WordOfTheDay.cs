@@ -10,7 +10,7 @@ public class WordOfTheDay : MonoBehaviour
     [SerializeField] TMP_Text wordOfTheDay;
     [SerializeField] string[] textOptions;
 
-    private void Awake()
+    public void SummonWord()
     {
         string wordToDisplay = RandomWord();
 

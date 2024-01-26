@@ -13,6 +13,9 @@ public class ItemInteract : MonoBehaviour
     [SerializeField] GameObject itemIcon;
     [SerializeField] PlayerMovement player;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource grabItem;
+
 
     private void Awake()
     {
@@ -44,7 +47,7 @@ public class ItemInteract : MonoBehaviour
     {
         interactionUI.SetActive(false);
         itemIcon.SetActive(true);
-        //insventorySystem.Add(pickedItem);
+        grabItem.Play();
         Destroy(parentObject);
     }
 }

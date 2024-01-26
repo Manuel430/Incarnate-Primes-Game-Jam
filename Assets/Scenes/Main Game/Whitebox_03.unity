@@ -50970,6 +50970,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1903765700}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1841226352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1903765700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841226351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7f2f8824e770148b21b5b99d9e58e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1846265070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52670,7 +52682,52 @@ PrefabInstance:
     - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
         type: 3}
       propertyPath: textOptions.Array.size
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[1]
+      value: Angd
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[2]
+      value: licking doorknobs is illegal on other planets
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[3]
+      value: Sleep is for the weak
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[4]
+      value: It smells like updog in here
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[5]
+      value: Boop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[6]
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[7]
+      value: Never gonna give you up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[8]
+      value: '*exhausted yippee*'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840826337708629696, guid: ed37dabd130c0b0448a99c196a48965e,
+        type: 3}
+      propertyPath: textOptions.Array.data[9]
+      value: help
       objectReference: {fileID: 0}
     - target: {fileID: 2901267059973954245, guid: ed37dabd130c0b0448a99c196a48965e,
         type: 3}
@@ -63516,6 +63573,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1687045863680745559, guid: af60cb2dc0f74954cb3210d6c414db9d,
+        type: 3}
+      propertyPath: word
+      value: 
+      objectReference: {fileID: 1841226352}
     - target: {fileID: 1687045863680745559, guid: af60cb2dc0f74954cb3210d6c414db9d,
         type: 3}
       propertyPath: player
