@@ -32,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("DeathTimer")]
     [SerializeField] float deathTime = 5;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource JumpSound;
+    [SerializeField] AudioSource runSound;
+
     #region Cutscene Get/Set
     public void SetCutscene(bool cutscene)
     {
@@ -121,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
         Vector3 movementDir = (new Vector3(inputVector.x, 0, inputVector.y)).normalized;
+
         if (inputVector.magnitude != 0)
         {
             if (isJumping)
@@ -183,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
+            JumpSound.Play();
             isJumping = true;
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }

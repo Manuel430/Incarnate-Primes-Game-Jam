@@ -15,6 +15,7 @@ public class ItemInteract : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioSource grabItem;
+    bool isItem;
 
 
     private void Awake()
@@ -37,7 +38,6 @@ public class ItemInteract : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         if(!other.CompareTag("Player")) { return; }
-
         player.CanGrab(false);
         interactionUI.SetActive(false);
         playerControl.Player.Interact.performed -= CollectItem;
@@ -47,7 +47,6 @@ public class ItemInteract : MonoBehaviour
     {
         interactionUI.SetActive(false);
         itemIcon.SetActive(true);
-        grabItem.Play();
         Destroy(parentObject);
     }
 }

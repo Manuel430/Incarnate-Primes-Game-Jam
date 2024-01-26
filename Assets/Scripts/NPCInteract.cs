@@ -39,6 +39,12 @@ public class NPCInteract : MonoBehaviour
     [SerializeField] Animation npcAnimation;
     [SerializeField] bool isHappy;
 
+    [Header("Audio Sources")]
+    [SerializeField] AudioSource sadInteract;
+    [SerializeField] AudioSource happyInteract;
+    [SerializeField] AudioSource wrongTalk;
+    [SerializeField] AudioSource rightTalk;
+
     private void Awake()
     {
         interactionUI.SetActive(false);
@@ -131,21 +137,26 @@ public class NPCInteract : MonoBehaviour
             if (wrongItem_01 == true && rightItem == false)
             {
                 dialogueTemplate.text = wrongItemDialogue_01;
-
+                wrongTalk.Play();
+                sadInteract.Play();
                 timer.LossOfTime(timeLoss);
             }
             else if(wrongItem_02 == true && rightItem == false)
             {
                 dialogueTemplate.text = wrongItemDialogue_02;
-
+                wrongTalk.Play();
+                sadInteract.Play();
                 timer.LossOfTime(timeLoss);
             }
             else if (rightItem == true)
             {
+
                 dialogueTemplate.text = rightItemDialogue;
+                happyInteract.Play();
 
                 if (isHappy == false)
                 {
+                    rightTalk.Play();
                     npcAnimation.Play("Laugh");
                     npcAnimation.PlayQueued("Idle_Happy");
                     isHappy = true;
@@ -155,6 +166,7 @@ public class NPCInteract : MonoBehaviour
             else
             {
                 dialogueTemplate.text = customDialogue;
+                sadInteract.Play();
             }
 
             DialoguePanel.SetActive(true);

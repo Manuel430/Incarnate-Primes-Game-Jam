@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SadNPC
   - ItemSlot
+  - Item
   layers:
   - Default
   - TransparentFX
