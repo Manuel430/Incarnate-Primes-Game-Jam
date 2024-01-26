@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f82274ff454edf4c8255913f7d4baa0
+guid: bf0373fc0cdc3c04fae34e102b2ded07
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,12 +33,12 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jump
-      takeName: Chester_Jump_StartAnim
-      internalID: 6685144433245366449
-      firstFrame: 0
-      lastFrame: 15
-      wrapMode: 1
+      name: DeathPose
+      takeName: Chester_Death_Loop_Anim
+      internalID: -6855553640558930841
+      firstFrame: 97
+      lastFrame: 98
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

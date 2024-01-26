@@ -18,11 +18,15 @@ public class GameTimer : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] PlayerMovement player;
 
+    [Header("Policemen Attack")]
+    [SerializeField] GameObject policeArmy;
+
     private void Awake()
     {
         gameOverUI.SetActive(false);
         countDown = true;
         remainingTime = maxTime;
+        policeArmy.SetActive(false);
     }
 
     private void Update()
@@ -41,8 +45,9 @@ public class GameTimer : MonoBehaviour
             else if (remainingTime < 1)
             {
                 remainingTime = 0;
+                policeArmy.SetActive(true);
                 player.SetCutscene(true);
-                //Play death animation before stopping the whole game
+                player.GameOver();
                 gameOverUI.SetActive(true);
             }
         }

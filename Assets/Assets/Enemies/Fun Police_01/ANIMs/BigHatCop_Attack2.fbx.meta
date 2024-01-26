@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc63368033496ac4282a6b6a4adf398a
+guid: 91cc180f4b56c714080b757cd84b94d7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -34,8 +34,8 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Attack
-      takeName: Take 001
-      internalID: 1827226128182048838
+      takeName: BigHatCop_Attack2
+      internalID: 8063822161678974088
       firstFrame: 1
       lastFrame: 40
       wrapMode: 2
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

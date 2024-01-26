@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc63368033496ac4282a6b6a4adf398a
+guid: adb6b28571746cf46a1aa0979459c7c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -28,17 +28,17 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 0
+    animationWrapMode: 1
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
-      takeName: Take 001
-      internalID: 1827226128182048838
+      name: Death
+      takeName: Chester_Death_Anim
+      internalID: 4319239756739537935
       firstFrame: 1
-      lastFrame: 40
-      wrapMode: 2
+      lastFrame: 97
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -56,11 +56,18 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.9925926
+        functionName: Death
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0.9
     isReadable: 0
   meshes:
     lODScreenPercentages: []

@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Cutscene")]
     [SerializeField] bool inCutscene;
+    [SerializeField] bool isDead;
+    [SerializeField] bool hasWon;
 
     [Header("Movement")]
     [SerializeField] float speed;
@@ -26,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Grab")]
     [SerializeField] bool canGrab;
+
+    [Header("DeathTimer")]
+    [SerializeField] float deathTime = 5;
 
     #region Cutscene Get/Set
     public void SetCutscene(bool cutscene)
@@ -49,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Player.Enable();
 
         playerControls.Player.Jump.performed += Jump;
+        isDead = false;
     }
 
     #region On Enable/Disable
@@ -74,6 +80,26 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             startJump = true;
         }
+
+        if (hasWon)
+        {
+            playerANIM.Stop("Grab");
+        }
+
+        if (isDead)
+        {
+            playerANIM.Play("Death");
+            deathTime -= Time.deltaTime;
+
+            if(deathTime < 1 )
+            {
+                deathTime = 0;
+                playerANIM.Stop("Death");
+                playerANIM.RemoveClip("Death");
+                playerANIM.Play("DeathPose");
+            }
+           
+        }
     }
     
     public bool CanGrab(bool setActive)
@@ -86,6 +112,11 @@ public class PlayerMovement : MonoBehaviour
         if (characterController.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = -2;
+        }
+
+        if (isDead || hasWon)
+        {
+            return;
         }
 
         Vector2 inputVector = playerControls.Player.Movement.ReadValue<Vector2>();
@@ -155,5 +186,22 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
+    }
+
+    public void GameOver()
+    {
+        playerANIM.Stop("Run");
+        playerANIM.RemoveClip("Run");
+        playerANIM.Stop("Idle");
+        playerANIM.RemoveClip("Idle");
+
+        isDead = true;
+    }
+    public void GameWin()
+    {
+        playerANIM.Stop("Run");
+        playerANIM.Stop("Idle");
+        hasWon = true;
+
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc63368033496ac4282a6b6a4adf398a
+guid: 8f82274ff454edf4c8255913f7d4baa0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,12 +33,12 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
-      takeName: Take 001
-      internalID: 1827226128182048838
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 2
+      name: Jump
+      takeName: Chester_Jump_StartAnim
+      internalID: 6685144433245366449
+      firstFrame: 3
+      lastFrame: 15
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -60,7 +60,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
