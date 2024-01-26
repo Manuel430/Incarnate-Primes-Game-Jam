@@ -25,11 +25,13 @@ public class NPCInteract : MonoBehaviour
     [Header("Dialogue Text")]
     [SerializeField] TMP_Text dialogueTemplate;
     [SerializeField] string customDialogue;
-    [SerializeField] string wrongItemDialogue;
+    [SerializeField] string wrongItemDialogue_01;
+    [SerializeField] string wrongItemDialogue_02;
     [SerializeField] string rightItemDialogue;
 
     [Header("Item Checks")]
-    [SerializeField] bool wrongItem;
+    [SerializeField] bool wrongItem_01;
+    [SerializeField] bool wrongItem_02;
     [SerializeField] bool rightItem;
     [SerializeField] int timeLoss;
 
@@ -54,9 +56,14 @@ public class NPCInteract : MonoBehaviour
     public bool SetCutscene(bool setActive) {  return inCutscene = setActive; }
     #endregion
 
-    public bool SetWrongItem(bool checker)
+    public bool SetWrongItem_01(bool checker)
     {
-        return wrongItem = checker;
+        return wrongItem_01 = checker;
+    }
+
+    public bool SetWrongItem_02(bool checker)
+    {
+        return wrongItem_02 = checker;
     }
 
     public bool SetRightItem(bool checker)
@@ -121,9 +128,15 @@ public class NPCInteract : MonoBehaviour
                 decision.ItemDecider();
             }
 
-            if(wrongItem == true)
+            if (wrongItem_01 == true && rightItem == false)
             {
-                dialogueTemplate.text = wrongItemDialogue;
+                dialogueTemplate.text = wrongItemDialogue_01;
+
+                timer.LossOfTime(timeLoss);
+            }
+            else if(wrongItem_02 == true && rightItem == false)
+            {
+                dialogueTemplate.text = wrongItemDialogue_02;
 
                 timer.LossOfTime(timeLoss);
             }

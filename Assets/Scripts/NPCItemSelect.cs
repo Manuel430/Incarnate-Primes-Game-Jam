@@ -44,9 +44,13 @@ public class NPCItemSelect : MonoBehaviour
             //correctItem.SetActive(false);
             Destroy(correctItem.gameObject);
         }
-        else 
+        else if (wrongItem_01.activeInHierarchy)
         {
-            Decider.SetWrongItem(!correctItem.activeInHierarchy);
+            Decider.SetWrongItem_01(wrongItem_01.activeInHierarchy);
+        }
+        else if (wrongItem_02.activeInHierarchy)
+        {
+            Decider.SetWrongItem_02(wrongItem_02.activeInHierarchy);
         }
     }
 }

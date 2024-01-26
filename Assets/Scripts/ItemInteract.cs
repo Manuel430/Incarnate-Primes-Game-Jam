@@ -13,8 +13,6 @@ public class ItemInteract : MonoBehaviour
     [SerializeField] GameObject itemIcon;
     [SerializeField] PlayerMovement player;
 
-    //[SerializeField] InventoryItem pickedItem;
-    //[SerializeField] InventorySystem inventorySystem;
 
     private void Awake()
     {
