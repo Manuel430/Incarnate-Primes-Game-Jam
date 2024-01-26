@@ -45,7 +45,7 @@ public class NPCMovement : MonoBehaviour
             npcAgent.isStopped = false;
         }
 
-        range = Random.Range(1, 10);
+        range = Random.Range(1, 2);
         if(npcAgent.remainingDistance <= npcAgent.stoppingDistance)
         {
             if(RandomPoint(centerPoint.position, range, out rayPoint))

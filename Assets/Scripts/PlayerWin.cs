@@ -12,12 +12,14 @@ public class PlayerWin : MonoBehaviour
     [SerializeField] GameObject TimerUI;
     [SerializeField] GameObject CanWinUI;
     [SerializeField] GameObject collectionUI;
+    [SerializeField] GameObject frogMayor;
 
     private void Awake()
     {
         allSadPeople = GameObject.FindGameObjectsWithTag("SadNPC").Length;
         winUI.SetActive(false);
         CanWinUI.SetActive(false);
+        frogMayor.SetActive(false);
     }
 
     public void SubtractAmount(int amount)
@@ -27,7 +29,8 @@ public class PlayerWin : MonoBehaviour
         if(allSadPeople == 0)
         {
             CanWinUI.SetActive(true);
-            CanWinUI.SetActive(false);
+            collectionUI.SetActive(false);
+            frogMayor.SetActive(true);
         }
     }
 
@@ -45,6 +48,7 @@ public class PlayerWin : MonoBehaviour
             TimerUI.SetActive(false);
             winUI.SetActive(true);
             CanWinUI.SetActive(false);
+            gameTimer.gameObject.SetActive(false);
             //player.GameWin();
         }
     }

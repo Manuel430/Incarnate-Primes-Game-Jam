@@ -69,13 +69,19 @@ public class FunPolice : MonoBehaviour
 
     private void Update()
     {
-        if(onPatrol == true)
+        if (playerInRange == true)
         {
-            Patrol();
-        }
-        else if (playerInRange == true)
-        {
+            policeANIM.Stop("Walk");
+            policeANIM.Play("Attack");
             Chase();
+        }
+        else if (onPatrol == true)
+        {
+            policeANIM.Stop("Attack");
+            policeANIM.Play("Walk");
+
+            Patrol();
+
         }
     }
 
@@ -92,6 +98,8 @@ public class FunPolice : MonoBehaviour
 
     private void Patrol()
     {
+
+
 
         range = UnityEngine.Random.Range(1,3);
         

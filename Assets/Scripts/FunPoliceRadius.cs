@@ -5,6 +5,7 @@ using UnityEngine;
 public class FunPoliceRadius : MonoBehaviour
 {
     [SerializeField] FunPolice policeRadius;
+    [SerializeField] Animation policeANIM;
 
     private void OnTriggerEnter(Collider other)
     {
