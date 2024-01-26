@@ -32,15 +32,31 @@ public class PauseUI : MonoBehaviour
 
         if (!isPaused)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             isPaused = true;
             Time.timeScale = 0;
             pauseUI.SetActive(true);
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             isPaused = false;
             Time.timeScale = 1f;
             pauseUI.SetActive(false);
         }
+    }
+
+    public void ContinuePlay()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        isPaused = false;
+        Time.timeScale = 1f;
+        pauseUI.SetActive(false);
     }
 }
