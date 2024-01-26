@@ -1775,6 +1775,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278281473}
   m_Mesh: {fileID: -3278256112222460582, guid: 4cce85b9ec0df0a45a1a64b7e841edc1, type: 3}
+--- !u!111 &280735498 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 2482060751079922117, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498123550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &282105869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2632,6 +2638,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 58.652313, y: 58.65223, z: 58.652252}
   m_Center: {x: -0.000026702888, y: 0, z: -0.000118255615}
+--- !u!1 &414174903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6986310880189487570, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498123550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &414174906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414174903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e228718294fd546ad78b09ce087292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  policeRadius: {fileID: 456678735}
 --- !u!65 &423010909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2735,9 +2760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27065817c715d284fb0913d1f4a2df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctItem: {fileID: 479580205}
+  correctItem: {fileID: 552906056}
   wrongItem_01: {fileID: 1754623434}
-  wrongItem_02: {fileID: 552906056}
+  wrongItem_02: {fileID: 479580205}
   voidObject: {fileID: 805833380}
   Decider: {fileID: 436738307}
 --- !u!65 &441439719
@@ -2761,6 +2786,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 210.60088, y: 418.6042, z: 111.200005}
   m_Center: {x: -0.0014648438, y: 208.5234, z: -50.599262}
+--- !u!1 &456678732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6003947844466994666, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498123550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &456678735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8207961877508776396, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498123550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456678732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7559077a91b481418ef616ab75b4bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &456678737
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456678732}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!65 &461645711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3648,7 +3718,7 @@ PrefabInstance:
     - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
         type: 3}
       propertyPath: customDialogue
-      value: This is custom dialogue
+      value: I have no purpose without my wife. I'm missing my other half.
       objectReference: {fileID: 0}
     - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
         type: 3}
@@ -3658,12 +3728,22 @@ PrefabInstance:
     - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
         type: 3}
       propertyPath: rightItemDialogue
-      value: Thank you funny man
+      value: A Mask! I can act like I have a wife!
       objectReference: {fileID: 0}
     - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
         type: 3}
       propertyPath: wrongItemDialogue
       value: This isn't my item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
+        type: 3}
+      propertyPath: wrongItemDialogue_01
+      value: Why does it move like that? I'm a cat person.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009329167017339784, guid: a66b5a0f69e15f14da20e9cfdd292c2e,
+        type: 3}
+      propertyPath: wrongItemDialogue_02
+      value: Are you handing me your nose? It has snot on it.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -4650,6 +4730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5454361217165744174, guid: 9dadf1afb5d1f524ba36c0c53298dbe4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4685,8 +4770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27065817c715d284fb0913d1f4a2df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctItem: {fileID: 552906056}
-  wrongItem_01: {fileID: 1754623434}
+  correctItem: {fileID: 1754623434}
+  wrongItem_01: {fileID: 552906056}
   wrongItem_02: {fileID: 479580205}
   voidObject: {fileID: 805833380}
   Decider: {fileID: 824415339}
@@ -7565,9 +7650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27065817c715d284fb0913d1f4a2df32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctItem: {fileID: 1754623434}
+  correctItem: {fileID: 479580205}
   wrongItem_01: {fileID: 552906056}
-  wrongItem_02: {fileID: 479580205}
+  wrongItem_02: {fileID: 1754623434}
   voidObject: {fileID: 805833380}
   Decider: {fileID: 1262910575}
 --- !u!1 &1264315542
@@ -8479,7 +8564,7 @@ PrefabInstance:
     - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
         type: 3}
       propertyPath: customDialogue
-      value: I'm a smol child
+      value: Oh man, I'm so bored. The Fun Police took the toys from the orphanage.
       objectReference: {fileID: 0}
     - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
         type: 3}
@@ -8489,12 +8574,24 @@ PrefabInstance:
     - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
         type: 3}
       propertyPath: rightItemDialogue
-      value: Thank ye
+      value: A Ball! He's going to be my husband. We'll be together for ever and
+        ever and ever and ever and ever and ever and ever...
       objectReference: {fileID: 0}
     - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
         type: 3}
       propertyPath: wrongItemDialogue
       value: Wow u suck
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
+        type: 3}
+      propertyPath: wrongItemDialogue_01
+      value: I'm allergic to dogs! And they killed my parents.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018957037164982421, guid: e693edf49b8645643a84cfe4fe34264f,
+        type: 3}
+      propertyPath: wrongItemDialogue_02
+      value: I despise thespians. I hate Newsies, I hate Wicked, I hate Cats, I hate
+        Hamilton...
       objectReference: {fileID: 0}
     - target: {fileID: 8419558681627993427, guid: e693edf49b8645643a84cfe4fe34264f,
         type: 3}
@@ -9259,6 +9356,132 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 58.652313, y: 58.65223, z: 58.652252}
   m_Center: {x: 0.00000381469, y: 0, z: -0.0009727478}
+--- !u!1001 &1498123550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 232392795257222556, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 750102875911371876, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 750102875911371876, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 123.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.28181943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.95946753
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -147.262
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513751502255907621, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003947844466994666, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_Name
+      value: FunPolice_TallCop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551738559477507749, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551738559477507749, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207961877508776396, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: policeANIM
+      value: 
+      objectReference: {fileID: 280735498}
+    - target: {fileID: 8207961877508776396, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: patrolSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207961877508776396, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: playerPoint
+      value: 
+      objectReference: {fileID: 1985995350}
+    - target: {fileID: 8207961877508776396, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3669019763922476924, guid: 0cc560d57e64f8742ad5d59c1f06dd6b, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6003947844466994666, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 456678737}
+    - targetCorrespondingSourceObject: {fileID: 6986310880189487570, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 414174906}
+    - targetCorrespondingSourceObject: {fileID: 791047673746214148, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1716093661}
+  m_SourcePrefab: {fileID: 100100000, guid: 0cc560d57e64f8742ad5d59c1f06dd6b, type: 3}
 --- !u!114 &1512734975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10256,6 +10479,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 58.652313, y: 58.65223, z: 58.652252}
   m_Center: {x: 0.000034332268, y: 0, z: -0.00005722046}
+--- !u!1 &1716093658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 791047673746214148, guid: 0cc560d57e64f8742ad5d59c1f06dd6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1498123550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1716093661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716093658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c573be49f4fd8af49a01ded8ba1900fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  policeRange: {fileID: 456678735}
 --- !u!65 &1717102511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10744,7 +10986,7 @@ PrefabInstance:
     - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
         type: 3}
       propertyPath: customDialogue
-      value: I'm old
+      value: I've been so lonely since my dog died. I wish I had my friend back.
       objectReference: {fileID: 0}
     - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
         type: 3}
@@ -10754,12 +10996,22 @@ PrefabInstance:
     - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
         type: 3}
       propertyPath: rightItemDialogue
-      value: What's wrong with me
+      value: A Balloon Dog! I can finally see my friend again. I'm freeeeeeeeeee.
       objectReference: {fileID: 0}
     - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
         type: 3}
       propertyPath: wrongItemDialogue
       value: What's wrong with you?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
+        type: 3}
+      propertyPath: wrongItemDialogue_01
+      value: My dog loved playing fetch, I wish I had him to play with.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193941005982397411, guid: a91838a290df99f4fbb2ece40150fd9b,
+        type: 3}
+      propertyPath: wrongItemDialogue_02
+      value: My dog used to love masks. My dog was a theater major.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -12282,6 +12534,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2606d4289e7144ab6bf3276f26ebb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1985995350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3055842267212651877, guid: 9dadf1afb5d1f524ba36c0c53298dbe4,
+    type: 3}
+  m_PrefabInstance: {fileID: 822668962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987606316
 GameObject:
   m_ObjectHideFlags: 0
@@ -18397,3 +18655,4 @@ SceneRoots:
   - {fileID: 1987606317}
   - {fileID: 1970054483}
   - {fileID: 805833381}
+  - {fileID: 1498123550}

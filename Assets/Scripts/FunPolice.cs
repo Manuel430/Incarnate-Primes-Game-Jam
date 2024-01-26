@@ -6,102 +6,149 @@ using UnityEngine.AI;
 
 public class FunPolice : MonoBehaviour
 {
-    //NavMeshAgent funPolice;
+    NavMeshAgent funPolice;
 
-    //[Header("Set Player's Transform")]
-    //[SerializeField] LayerMask playerMask;   
-    //[SerializeField] Transform player;
-    //[SerializeField] Transform centerPoint;
+    [Header("Player's Mask")]
+    [SerializeField] LayerMask playerMask;
 
-    //[Header("Viewing and Speed")]
-    //float range;
-    //[SerializeField]float viewRadius;
-    //[SerializeField] float viewAngle = 90;
-    //[SerializeField] float patrolSpeed;
-    //[SerializeField] float chaseSpeed;
+    [Header("Positions")]
+    [SerializeField] Transform playerPoint;
+    [SerializeField] Transform centerPoint;
+    Vector3 playerPosition;
+    Vector3 rayPoint;
 
-    //[Header("Player Checks")]
-    //bool playerInRange;
-    //bool playerNear;
-    //bool playerCloseUp;
-    //bool onPatrol;
+    [Header("Run Speed and Viewpoint")]
+    float range;
+    float viewRadius = 15;
+    float viewAngle = 90;
+    [SerializeField] float patrolSpeed;
+    [SerializeField] float chaseSpeed;
 
-    //[Header("Player Positions")]
-    //Vector3 playerLastPosition = Vector3.zero;
-    //Vector3 playerPosition = Vector3.zero;
-    //Vector3 rayPoint;
+    [Header("Player Checks")]
+    [SerializeField] bool playerInRange;
+    [SerializeField] bool playerNear;
+    [SerializeField] bool onPatrol;
+    [SerializeField] bool playerCloseUp;
 
-    //private void Awake()
-    //{
-    //    funPolice = GetComponent<NavMeshAgent>();
-    //    funPolice.isStopped = false;
-    //    funPolice.speed = patrolSpeed;
-    //    funPolice.SetDestination(centerPoint.position);
+    [Header("Animation")]
+    [SerializeField] Animation policeANIM;
 
-    //    onPatrol = true;
-    //    playerCloseUp = false;
-    //    playerInRange = false;
-    //}
+    private void Awake()
+    {
+        funPolice = GetComponent<NavMeshAgent>();
+        funPolice.isStopped = false;
+        funPolice.speed = patrolSpeed;
+        funPolice.SetDestination(centerPoint.position);
 
-    //private void Update()
-    //{
-    //    if(playerCloseUp == true)
-    //    {
-    //        playerInRange = false;
-    //        onPatrol = false;
-    //        funPolice.speed = 0;
-    //        Attack();
-    //        return;
-    //    }
+        playerPosition = Vector3.zero;
 
-    //    if (playerInRange == false && playerCloseUp == false && onPatrol == true)
-    //    {
-    //        Patrol();
-    //    }
-    //    else if (playerInRange == true && playerCloseUp == false && onPatrol == false)
-    //    {
-    //        Chase();
-    //    }
-    //}
+        onPatrol = true;
+        playerCloseUp = false;
+        playerInRange = false;
 
-    //#region SetBools
-    //public bool SetChasing(bool setActive)
-    //{
-    //    playerInRange = setActive;
-    //    return playerInRange;
-    //}
+        policeANIM.Play("Walk");
+    }
 
-    //public bool SetPatrolling(bool setActive)
-    //{
-    //    onPatrol = setActive;
-    //    return onPatrol;
-    //}
+    #region Chase, Patrol, or Attack
+    public bool SetChase(bool setActive)
+    {
+        return playerInRange = setActive;
+    }
 
-    //public bool SetAttacking(bool setActive)
-    //{
-    //    playerCloseUp = setActive;
-    //    return playerCloseUp;
-    //}
-    //#endregion
+    public bool SetPatrol(bool setActive)
+    {
+        return onPatrol = setActive;
+    }
 
-    //private void Attack()
-    //{
-    //    Stop();
-    //    pa
-    //}
+    public bool SetAttack(bool setActive)
+    {
+        return playerCloseUp = setActive;
+    }
 
-    //private void Chase()
-    //{
-    //    throw new NotImplementedException();
-    //}
+    #endregion
 
-    //private void Patrol()
-    //{
-    //    throw new NotImplementedException();
-    //}
+    private void Update()
+    {
+        if(onPatrol == true)
+        {
+            Patrol();
+        }
+        else if (playerInRange == true)
+        {
+            Chase();
+        }
+    }
 
-    //private void Stop()
-    //{
-    //    throw new NotImplementedException();
-    //}
+    private void Chase()
+    {
+
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        Move(chaseSpeed);
+
+        funPolice.SetDestination(playerPosition);
+
+    }
+
+    private void Patrol()
+    {
+
+        range = UnityEngine.Random.Range(1,3);
+        
+        Move(patrolSpeed);
+        
+        if(funPolice.remainingDistance <= funPolice.stoppingDistance)
+        {
+            if(RandomPoint(centerPoint.position, range, out rayPoint))
+            {
+                Debug.DrawRay(rayPoint, Vector3.up, Color.yellow);
+                funPolice.SetDestination(rayPoint);
+            }
+        }
+    }
+
+    private void Attack()
+    {
+        Stop();
+        funPolice.speed = 0;
+        policeANIM.Play("Attack");
+        return;
+    }
+
+    private void Stop()
+    {
+        policeANIM.Play("Attack");
+
+        if(funPolice.isActiveAndEnabled)
+        {
+            funPolice.isStopped = true;
+            funPolice.speed = 0;
+        }
+    }
+
+    private void Move(float speed)
+    {
+        if (!funPolice.isActiveAndEnabled)
+        {
+            return;
+        }
+
+        funPolice.isStopped = false;
+        funPolice.speed = speed;
+    }
+
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        Vector3 randomPoint = center + UnityEngine.Random.insideUnitSphere * range;
+        NavMeshHit hit;
+        if(NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            result = hit.position;
+            return true;
+        }
+
+        result = Vector3.zero;
+        return false;
+    }
+
 }
