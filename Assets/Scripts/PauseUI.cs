@@ -7,7 +7,7 @@ using System;
 
 public class PauseUI : MonoBehaviour
 {
-    bool isPaused;
+    [SerializeField ]bool isPaused;
 
     [SerializeField] GameObject pauseUI;
 
@@ -19,6 +19,9 @@ public class PauseUI : MonoBehaviour
         playerControls = new PlayerControlsScript();
         playerControls.Player.Enable();
         playerControls.Player.Pause.performed += PausingGame;
+        isPaused = false;
+
+        Time.timeScale = 1.0f;
     }
 
     public bool GetPaused() { return isPaused; }
