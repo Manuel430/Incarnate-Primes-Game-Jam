@@ -64,8 +64,6 @@ Finally returning to the NPCs, determining which item the player has in order, t
             return;
         }
 
-
-
         if (interactionUI.gameObject == true && inCutscene == false)
         {
             inCutscene = true;
